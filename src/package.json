@@ -1,0 +1,16 @@
+{
+  "name": "swagger-chrome-extension",
+  "version": "0.1.0",
+  "dependencies": {},
+  "scripts": {
+    "build-popup": "cd ./popup && npm run build && cp -r build ../../dist/popup",
+    "build-options": "cd ./options && npm run build && cp -r build ../../dist/options",
+    "build-background": "cp background/background.js ../dist",
+    "cp-extension": "cp manifest.json ../dist && cp -r images ../dist",
+    "clean": "rimraf ../dist/*",
+    "build": "npm run clean && npm run build-popup && npm run build-options && npm run build-background && npm run cp-extension"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.2"
+  }
+}
